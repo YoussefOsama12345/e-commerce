@@ -1,21 +1,28 @@
 const app = require('./app');
-const sequelize = require('./config/db'); // Adjust path if needed
-const {DEVELOPMENT_ENV} = require("./config/env")
+const sequelize = require('./config/db');
+const { DEVELOPMENT_ENV } = require('./config/env');
+const setupAssociations = require('./models/associations');
 
-// models 
+// models
 const User = require('./models/user.model');
+const Product = require('./models/product.model');
+const Order = require('./models/order.model');
+const Cart = require('./models/cart.model');
+const Review = require('./models/review.model');
 
 // Server port
 const PORT = DEVELOPMENT_ENV.port || 5000;
 
+// Setup associations BEFORE syncing
+setupAssociations();
 
-sequelize.sync({ force: false }) 
+sequelize.sync({ force: false, alter: true })
     .then(() => {
-    console.log("All models synced with DB");
-})
-.catch((err) => {
-        console.error("Error syncing models:", err);
-});
+        console.log('All models synced with DB');
+    })
+    .catch((err) => {
+        console.error('Error syncing models:', err);
+    });
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

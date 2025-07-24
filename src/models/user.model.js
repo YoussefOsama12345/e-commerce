@@ -3,6 +3,7 @@ const sequelize = require('../config/db');
 const ERROR_MESSAGES = require('../constants/error.messages');
 const REGEX_PATTERNS = require('../constants/regex.patterns');
 const {hashPassword} = require('../utils/hash');
+const Order = require('./order.model');
 
 const User = sequelize.define('User', {
     id: {
@@ -132,5 +133,6 @@ User.prototype.toJSON = function () {
     delete values.passwordResetExpires;
     return values;
 };
+
 
 module.exports = User;

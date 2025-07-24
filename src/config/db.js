@@ -13,7 +13,7 @@ const sequelize = new Sequelize(
         port: config.port,
         dialect: config.dialect,
         dialectOptions: config.dialectOptions,
-        logging: false, // Disable logging; set to console.log to enable
+        logging: false, 
     }
 );
 
