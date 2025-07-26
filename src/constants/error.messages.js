@@ -122,6 +122,19 @@ ROLE_MODEL_ERRORS = {
     DESCRIPTION_NOT_NULL: 'Description cannot be null.',
 }
 
+PERMISSION_MODEL_ERRORS = {
+    NAME_LENGTH_MIN: 'Name must be at least 3 characters.',
+    NAME_LENGTH_MAX: 'Name must be at most 20 characters.',
+    NAME_LETTERS_ONLY: 'Name can only contain letters and spaces.',
+    NAME_NOT_EMPTY: 'Name cannot be empty.',
+    NAME_NOT_NULL: 'Name cannot be null.',
+    DESCRIPTION_LENGTH_MIN: 'Description must be at least 3 characters.',
+    DESCRIPTION_LENGTH_MAX: 'Description must be at most 150 characters.',
+    DESCRIPTION_LETTERS_ONLY: 'Description can only contain letters and spaces.',
+    DESCRIPTION_NOT_EMPTY: 'Description cannot be empty.',
+    DESCRIPTION_NOT_NULL: 'Description cannot be null.',
+}
+
 module.exports = {
     USER_MODEL_ERRORS,
     PRODUCT_MODEL_ERRORS,
@@ -132,5 +145,6 @@ module.exports = {
     CART_ITEM_MODEL_ERRORS,
     PRODUCT_IMAGE_MODEL_ERRORS,
     PAYMENT_MODEL_ERRORS,
-    ROLE_MODEL_ERRORS
+    ROLE_MODEL_ERRORS,
+    PERMISSION_MODEL_ERRORS
 };

@@ -37,6 +37,11 @@ ROLE_MODEL_REGEX = {
     DESCRIPTION: /^[A-Za-z\s]+$/,
 }
 
+PERMISSION_MODEL_REGEX = {
+    NAME: /^[A-Za-z\s]+$/,
+    DESCRIPTION: /^[A-Za-z\s]+$/,
+}
+
 module.exports = {
     USER_MODEL_REGEX,
     PRODUCT_MODEL_REGEX,
@@ -45,4 +50,5 @@ module.exports = {
     CATEGORY_MODEL_REGEX,
     PRODUCT_IMAGE_REGEX,
     ROLE_MODEL_REGEX,
+    PERMISSION_MODEL_REGEX
 };
