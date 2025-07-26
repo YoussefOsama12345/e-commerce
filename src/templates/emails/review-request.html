@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>We'd Love Your Feedback!</title>
+        <style>
+
+            body,
+            table,
+            td,
+            p,
+            a,
+            li {
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+            }
+
+            table,
+            td {
+                mso-table-lspace: 0pt;
+                mso-table-rspace: 0pt;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                font-family: 'Segoe UI', sans-serif;
+                font-size: 16px;
+                color: #333333;
+            }
+
+            .email-container {
+                max-width: 600px;
+                margin: 0 auto;
+                background-color: #ffffff;
+            }
+
+            .header {
+                background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 28px;
+                font-weight: bold;
+                color: #ffffff;
+                margin-bottom: 10px;
+            }
+
+            .content {
+                padding: 40px 30px;
+            }
+
+            .review-title {
+                font-size: 32px;
+                font-weight: bold;
+                color: #9b59b6;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .review-section {
+                background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+                color: #ffffff;
+                padding: 25px;
+                border-radius: 10px;
+                margin: 30px 0;
+                text-align: center;
+            }
+
+            .review-button {
+                display: inline-block;
+                background-color: #ffffff;
+                color: #9b59b6;
+                text-decoration: none;
+                padding: 15px 30px;
+                border-radius: 50px;
+                font-weight: bold;
+                font-size: 16px;
+                margin: 15px 0;
+            }
+
+            .order-details {
+                background-color: #f8f9fa;
+                border-radius: 10px;
+                padding: 25px;
+                margin: 30px 0;
+            }
+
+            .detail-row {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+                padding: 8px 0;
+                border-bottom: 1px solid #e9ecef;
+            }
+
+            .product-item {
+                background-color: #ffffff;
+                border: 1px solid #e9ecef;
+                border-radius: 8px;
+                padding: 15px;
+                margin: 10px 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .product-image {
+                width: 60px;
+                height: 60px;
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                margin-right: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+            }
+
+            .product-info {
+                flex: 1;
+            }
+
+            .product-name {
+                font-weight: bold;
+                color: #2c3e50;
+                margin-bottom: 5px;
+            }
+
+            .product-price {
+                color: #9b59b6;
+                font-weight: bold;
+            }
+
+            .product-quantity {
+                color: #666666;
+                font-size: 14px;
+            }
+
+            .review-info {
+                background-color: #f3e5f5;
+                border: 1px solid #e1bee7;
+                border-radius: 10px;
+                padding: 20px;
+                margin: 30px 0;
+            }
+
+            .footer {
+                background-color: #2c3e50;
+                color: #ffffff;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            @media only screen and (max-width: 600px) {
+                .email-container {
+                    width: 100% !important;
+                }
+                .content {
+                    padding: 20px 15px !important;
+                }
+                .review-title {
+                    font-size: 24px !important;
+                }
+                .detail-row {
+                    flex-direction: column !important;
+                    text-align: center !important;
+                }
+                .product-item {
+                    flex-direction: column !important;
+                    text-align: center !important;
+                }
+                .product-image {
+                    margin-right: 0 !important;
+                    margin-bottom: 10px !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td align="center" style="background-color: #f4f4f4; padding: 20px 0">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container">
+                
+                <!-- Header -->
+                <tr>
+                  <td class="header">
+                    <div class="logo">⭐ YourStore</div>
+                    <div style="color: #ffffff; font-size: 16px">
+                      Your One-Stop Shopping Destination
+                    </div>
+                  </td>
+                </tr>
+      
+                <!-- Main Content -->
+                <tr>
+                  <td class="content">
+      
+                    <h1 class="review-title">We'd Love Your Feedback! ⭐</h1>
+      
+                    <p style="font-size: 18px; color: #555555; margin-bottom: 30px; text-align: center; line-height: 1.8;">
+                      Hi {{userName}},<br /><br />
+                      We hope you're enjoying your recent purchase! Your feedback helps us improve and helps other customers make informed decisions. We'd be thrilled if you could take a moment to share your experience.
+                    </p>
+      
+                    <!-- Review Section -->
+                    <div class="review-section">
+                      <div style="font-size: 24px; font-weight: bold; margin-bottom: 15px;">Share Your Experience</div>
+                      <div style="font-size: 18px; margin-bottom: 15px">Order #{{orderNumber}}</div>
+                      <div style="margin-bottom: 15px">Delivered on: {{deliveryDate}}</div>
+                      <a href="{{reviewUrl}}" class="review-button">Write a Review</a>
+                    </div>
+      
+                    <!-- Order Details -->
+                    <div class="order-details">
+                      <div style="font-size: 24px; font-weight: bold; color: #9b59b6; margin-bottom: 20px; text-align: center;">
+                        Order #{{orderNumber}}
+                      </div>
+                      <div class="detail-row">
+                        <span style="font-weight: bold; color: #2c3e50">Order Date:</span>
+                        <span style="color: #666666">{{orderDate}}</span>
+                      </div>
+                      <div class="detail-row">
+                        <span style="font-weight: bold; color: #2c3e50">Delivery Date:</span>
+                        <span style="color: #666666">{{deliveryDate}}</span>
+                      </div>
+                      <div class="detail-row">
+                        <span style="font-weight: bold; color: #2c3e50">Order Total:</span>
+                        <span style="color: #666666">${{orderTotal}}</span>
+                      </div>
+                    </div>
+      
+                    <!-- Products List -->
+                    <h3 style="color: #2c3e50; margin: 30px 0 20px">Products You Purchased:</h3>
+      
+                    {{#each orderItems}}
+                    <div class="product-item">
+                      <div class="product-image">📦</div>
+                      <div class="product-info">
+                        <div class="product-name">{{name}}</div>
+                        <div class="product-price">${{price}}</div>
+                        <div class="product-quantity">Quantity: {{quantity}}</div>
+                      </div>
+                    </div>
+                    {{/each}}
+      
+                    <!-- Review Info Section -->
+                    <div class="review-info">
+                      <div style="color: #4a148c; font-weight: bold; margin-bottom: 10px;">💡 Why Your Review Matters</div>
+                      <ul style="color: #4a148c; font-size: 14px; margin: 10px 0; padding-left: 20px;">
+                        <li>Help other customers make informed purchasing decisions</li>
+                        <li>Share your experience with product quality and service</li>
+                        <li>Your feedback helps us improve our products and services</li>
+                        <li>Reviews help us understand what you love and what we can improve</li>
+                      </ul>
+                    </div>
+      
+                    <!-- Final Call-to-Action -->
+                    <div style="background-color: #f8f9fa; padding: 25px; border-radius: 10px; margin: 30px 0;">
+                      <h3 style="color: #2c3e50; margin-bottom: 15px; text-align: center;">Ready to Share?</h3>
+                      <div style="text-align: center; margin: 20px 0;">
+                        <a href="{{reviewUrl}}" class="review-button" style="background-color: #9b59b6; color: #ffffff;">
+                          Write Your Review
+                        </a>
+                      </div>
+                      <ul style="color: #666666; line-height: 2;">
+                        <li>
+                          Review individual products:
+                          <a href="{{productReviewUrl}}" style="color: #9b59b6">{{productReviewUrl}}</a>
+                        </li>
+                        <li>
+                          Review your overall experience:
+                          <a href="{{experienceReviewUrl}}" style="color: #9b59b6">{{experienceReviewUrl}}</a>
+                        </li>
+                        <li>
+                          View your order details:
+                          <a href="{{orderDetailsUrl}}" style="color: #9b59b6">{{orderDetailsUrl}}</a>
+                        </li>
+                        <li>
+                          Contact support:
+                          <a href="mailto:support@yourstore.com" style="color: #9b59b6">support@yourstore.com</a>
+                        </li>
+                      </ul>
+                    </div>
+      
+                  </td>
+                </tr>
+      
+                <!-- Footer -->
+                <tr>
+                  <td class="footer">
+                    <div style="font-size: 14px; color: #bdc3c7;">
+                      <p>
+                        Questions? Contact us at
+                        <a href="mailto:support@yourstore.com" style="color: #9b59b6;">support@yourstore.com</a>
+                      </p>
+                      <p>
+                        YourStore Inc. | 123 Shopping Street, City, State 12345
+                      </p>
+                      <p>
+                        <a href="{{unsubscribeUrl}}" style="color: #bdc3c7;">Unsubscribe</a> |
+                        <a href="{{privacyUrl}}" style="color: #bdc3c7;">Privacy Policy</a> |
+                        <a href="{{termsUrl}}" style="color: #bdc3c7;">Terms of Service</a>
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+      
+              </table>
+            </td>
+          </tr>
+        </table>
+    </body>
+</html>

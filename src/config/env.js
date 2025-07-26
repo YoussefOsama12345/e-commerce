@@ -4,6 +4,9 @@ dotenv.config();
 
 
 DEVELOPMENT_ENV = {
+    jwtSecret: process.env.JWT_SECRET,
+    emailUser: process.env.EMAIL_USER,
+    emailPassword: process.env.EMAIL_PASSWORD,
     saltRounds : process.env.SALT_ROUNDS,
     env : process.env.NODE_ENV,
     username: process.env.DB_USER,
@@ -21,6 +24,9 @@ DEVELOPMENT_ENV = {
 }
 
 PRODUCTION_ENV = {
+    jwtSecret: process.env.JWT_SECRET,
+    emailUser: process.env.EMAIL_USER,
+    emailPassword: process.env.EMAIL_PASSWORD,
     saltRounds : process.env.SALT_ROUNDS,
     env : process.env.NODE_ENV,
     username: process.env.DB_USER,
