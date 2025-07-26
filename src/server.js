@@ -9,6 +9,13 @@ const Product = require('./models/product.model');
 const Order = require('./models/order.model');
 const Cart = require('./models/cart.model');
 const Review = require('./models/review.model');
+const Category = require('./models/catogory.model');
+const ProductImage = require('./models/productImage.model');
+const Payment = require('./models/payment.model');
+const Wishlist = require('./models/wishlists.model');
+const CartItem = require('./models/cartItem.model');
+const OrderItem = require('./models/orderItem.model');
+
 
 // Server port
 const PORT = DEVELOPMENT_ENV.port || 5000;

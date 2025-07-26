@@ -22,9 +22,21 @@ REVIEW_MODEL_REGEX = {
     COMMENT: /^[a-zA-Z0-9\s]+$/,
 }
 
+CATEGORY_MODEL_REGEX = {
+    NAME: /^[A-Za-z\s]+$/,
+    DESCRIPTION: /^[A-Za-z\s]+$/,
+    IMAGE:  /\.(jpe?g|png|webp|gif|bmp|svg|avif|tiff?)$/i
+}
+
+PRODUCT_IMAGE_REGEX = {
+    IMAGE_URL: /\.(jpe?g|png|webp|gif|bmp|svg|avif|tiff?)$/i,
+}
+
 module.exports = {
     USER_MODEL_REGEX,
     PRODUCT_MODEL_REGEX,
     ORDER_MODEL_REGEX,
-    REVIEW_MODEL_REGEX
+    REVIEW_MODEL_REGEX,
+    CATEGORY_MODEL_REGEX,
+    PRODUCT_IMAGE_REGEX,
 };

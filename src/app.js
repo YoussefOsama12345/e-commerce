@@ -13,7 +13,7 @@ const app = express();
 
 // create logs directory
 
-const logDir = path.join(__dirname, 'logs');
+const logDir = path.join(process.cwd(), 'logs');
 if(!fs.existsSync(logDir)){
     fs.mkdirSync(logDir);
 }

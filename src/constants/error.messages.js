@@ -50,6 +50,7 @@ PRODUCT_MODEL_ERRORS = {
     COLOR_LETTERS_ONLY: 'Color can only contain letters and spaces.',
     MATERIAL_LENGTH: 'Material must be between 2 and 50 characters.',
     MATERIAL_LETTERS_ONLY: 'Material can only contain letters and spaces.',
+    CATEGORY_NOT_NULL: 'Category cannot be null.',
 }
 
 ORDER_MODEL_ERRORS = {
@@ -65,10 +66,60 @@ REVIEW_MODEL_ERRORS = {
     COMMENT_LENGTH: 'Comment must be between 1 and 500 characters.',
 }
 
+CATEGORY_MODEL_ERRORS = {
+    NAME_LENGTH: 'Name must be between 3 and 50 characters.',
+    NAME_LETTERS_ONLY: 'Name can only contain letters and spaces.',
+    NAME_NOT_EMPTY: 'Name cannot be empty.',
+    NAME_NOT_NULL: 'Name cannot be null.',
+    DESCRIPTION_LENGTH: 'Description must be between 10 and 500 characters.',
+    DESCRIPTION_LETTERS_ONLY: 'Description can only contain letters and spaces.',
+    DESCRIPTION_NOT_EMPTY: 'Description cannot be empty.',
+    DESCRIPTION_NOT_NULL: 'Description cannot be null.',
+    IMAGE_URL: 'Image must be a valid URL.',
+    IMAGE_NOT_EMPTY: 'Image cannot be empty.',
+    IMAGE_NOT_NULL: 'Image cannot be null.',
+}
+
+CART_MODEL_ERRORS = {
+    TOTAL_PRICE_MIN: 'Total price must be greater than 0.',
+    TOTAL_PRICE_MAX: 'Total price must be less than 1000000.',
+}
+
+CART_ITEM_MODEL_ERRORS = {
+    QUANTITY_MIN: 'Quantity must be greater than 0.',
+    QUANTITY_MAX: 'Quantity must be less than 100.',
+}
+
+PRODUCT_IMAGE_MODEL_ERRORS = {
+    ALT_TEXT_LENGTH: 'Alt text must be between 1 and 100 characters.',
+    ALT_TEXT_NOT_EMPTY: 'Alt text cannot be empty.',
+    ALT_TEXT_NOT_NULL: 'Alt text cannot be null.',
+    IMAGE_URL: 'Image URL must be a valid URL.',
+    IMAGE_URL_NOT_EMPTY: 'Image URL cannot be empty.',
+    IMAGE_URL_NOT_NULL: 'Image URL cannot be null.',
+}
+
+PAYMENT_MODEL_ERRORS = {
+    AMOUNT_MIN: 'Amount must be greater than 0.',
+    AMOUNT_MAX: 'Amount must be less than 1000000.',
+    AMOUNT_NOT_NULL: 'Amount cannot be null.',
+    PAYMENT_DATE_INVALID: 'Payment date must be a valid date.',
+    PAYMENT_DATE_NOT_NULL: 'Payment date cannot be null.',
+    PAYMENT_DATE_NOT_EMPTY: 'Payment date cannot be empty.',
+    PAYMENT_DATE_LENGTH: 'Payment date must be between 1 and 100 characters.',
+    PAYMENT_DATE_LETTERS_ONLY: 'Payment date can only contain letters and spaces.',
+    PAYMENT_DATE_MIN: 'Payment date must be greater than 0.',
+}
+
 
 module.exports = {
     USER_MODEL_ERRORS,
     PRODUCT_MODEL_ERRORS,
     ORDER_MODEL_ERRORS,
-    REVIEW_MODEL_ERRORS
+    REVIEW_MODEL_ERRORS,
+    CART_MODEL_ERRORS,
+    CATEGORY_MODEL_ERRORS,
+    CART_ITEM_MODEL_ERRORS,
+    PRODUCT_IMAGE_MODEL_ERRORS,
+    PAYMENT_MODEL_ERRORS
 };

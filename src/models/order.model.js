@@ -21,16 +21,6 @@ const Order = sequelize.define('Order', {
         onUpdate: 'CASCADE'
     },
 
-    items: {
-        type: DataTypes.ARRAY(DataTypes.JSON),
-        allowNull: false,
-        validate: {
-            isArray: {
-                msg: ORDER_MODEL_ERRORS.ITEMS_ARRAY
-            }
-        }
-    },
-
     totalAmount: {
         type: DataTypes.DECIMAL(10,2),
         allowNull: false,

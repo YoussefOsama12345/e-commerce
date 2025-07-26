@@ -24,14 +24,17 @@ const Cart = sequelize.define('Cart', {
         type: DataTypes.FLOAT,
         allowNull: false,
         defaultValue: 0,  
+        validate: {
+            min: {
+                args: [0],
+                msg: CART_MODEL_ERRORS.TOTAL_PRICE_MIN
+            },
+            max: {
+                args: [1000000],
+                msg: CART_MODEL_ERRORS.TOTAL_PRICE_MAX
+            }
+        }
     },
-
-    items: {
-        type: DataTypes.ARRAY(DataTypes.JSON),
-        allowNull: false,
-        defaultValue: [],
-    },
-
 }, {
     timestamps: true,
 })

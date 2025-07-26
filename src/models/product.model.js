@@ -97,23 +97,18 @@ const Product = sequelize.define('Product', {
         }
     },
 
-    category: {
-        type: DataTypes.STRING,
+    categoryId: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        validate :{
-            notNull:{
-                msg : PRODUCT_MODEL_ERRORS.CATEGORY_NOT_NULL
-            },
-            notEmpty:{
-                msg : PRODUCT_MODEL_ERRORS.CATEGORY_NOT_EMPTY
-            },
-            len :{
-                args : [2,50],
-                msg : PRODUCT_MODEL_ERRORS.CATEGORY_LENGTH
-            },
-            is :{
-                args : [PRODUCT_MODEL_REGEX.CATEGORY],
-                msg : PRODUCT_MODEL_ERRORS.CATEGORY_LETTERS_ONLY
+        references: {
+            model: 'Categories',
+            key: 'id'
+        },
+        onDelete: 'RESTRICT',
+        onUpdate: 'CASCADE',
+        validate: {
+            notNull: {
+                msg: PRODUCT_MODEL_ERRORS.CATEGORY_NOT_NULL
             }
         }
     },
