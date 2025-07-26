@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Verify Your Email Address</title>
+    <style>
+        /* Reset styles for email clients */
+        body, table, td, p, a, li, blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+        
+        /* Base styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #ffffff;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .verification-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .verification-message {
+            font-size: 18px;
+            color: #555555;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        .verification-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 30px 0;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+        
+        .verification-button:hover {
+            background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+        }
+        
+        .security-notice {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .security-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .security-text {
+            color: #856404;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .expiry-notice {
+            background-color: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .expiry-title {
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .expiry-text {
+            color: #666666;
+            font-size: 14px;
+        }
+        
+        .manual-link {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .manual-link-text {
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .manual-link-url {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #495057;
+            word-break: break-all;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+            margin: 30px 0;
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            color: #bdc3c7;
+            margin-top: 20px;
+        }
+        
+        .unsubscribe-link {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+        
+        /* Responsive design */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+            
+            .content {
+                padding: 20px 15px !important;
+            }
+            
+            .verification-title {
+                font-size: 24px !important;
+            }
+            
+            .verification-message {
+                font-size: 16px !important;
+            }
+            
+            .verification-button {
+                padding: 15px 30px !important;
+                font-size: 16px !important;
+            }
+            
+            .header {
+                padding: 20px 15px !important;
+            }
+            
+            .footer {
+                padding: 20px 15px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f4f4f4; padding: 20px 0;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container">
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <div class="logo">🛍️ YourStore</div>
+                            <div class="tagline">Your One-Stop Shopping Destination</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Content -->
+                    <tr>
+                        <td class="content">
+                            <h1 class="verification-title">Verify Your Email Address 🔐</h1>
+                            
+                            <p class="verification-message">
+                                Hi {{userName}},<br><br>
+                                Thanks for signing up! To complete your registration and start shopping, please verify your email address by clicking the button below.
+                            </p>
+                            
+                            <div style="text-align: center;">
+                                <a href="{{verificationUrl}}" class="verification-button">Verify Email Address</a>
+                            </div>
+                            
+                            <div class="security-notice">
+                                <div class="security-icon">🔒</div>
+                                <div class="security-text">
+                                    <strong>Security Notice:</strong> This verification link is unique to your account and will expire in 24 hours for your security.
+                                </div>
+                            </div>
+                            
+                            <div class="expiry-notice">
+                                <div class="expiry-title">⏰ Link Expires In 24 Hours</div>
+                                <div class="expiry-text">
+                                    For security reasons, this verification link will expire in 24 hours. If you don't verify your email within this time, you'll need to request a new verification link.
+                                </div>
+                            </div>
+                            
+                            <div class="manual-link">
+                                <div class="manual-link-text">If the button above doesn't work, copy and paste this link into your browser:</div>
+                                <div class="manual-link-url">{{verificationUrl}}</div>
+                            </div>
+                            
+                            <div class="divider"></div>
+                            
+                            <div style="background-color: #f8f9fa; padding: 25px; border-radius: 10px; margin: 30px 0;">
+                                <h3 style="color: #2c3e50; margin-bottom: 15px; text-align: center;">Why Verify Your Email?</h3>
+                                <ul style="color: #666666; line-height: 2;">
+                                    <li>Secure your account and protect your personal information</li>
+                                    <li>Receive important order updates and delivery notifications</li>
+                                    <li>Get exclusive offers and early access to sales</li>
+                                    <li>Reset your password if you forget it</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="text-align: center; margin: 30px 0;">
+                                <p style="color: #666666; font-size: 14px;">
+                                    Didn't create an account? <a href="{{supportUrl}}" style="color: #667eea;">Contact our support team</a>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-text">
+                                <p>Questions? Contact us at <a href="mailto:support@yourstore.com" style="color: #667eea;">support@yourstore.com</a></p>
+                                <p>YourStore Inc. | 123 Shopping Street, City, State 12345</p>
+                                <p>
+                                    <a href="{{unsubscribeUrl}}" class="unsubscribe-link">Unsubscribe</a> | 
+                                    <a href="{{privacyUrl}}" class="unsubscribe-link">Privacy Policy</a> | 
+                                    <a href="{{termsUrl}}" class="unsubscribe-link">Terms of Service</a>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html> 
