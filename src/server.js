@@ -15,6 +15,7 @@ const Payment = require('./models/payment.model');
 const Wishlist = require('./models/wishlists.model');
 const CartItem = require('./models/cartItem.model');
 const OrderItem = require('./models/orderItem.model');
+const Role = require('./models/roles.model')
 
 
 // Server port

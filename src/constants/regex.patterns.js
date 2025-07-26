@@ -32,6 +32,11 @@ PRODUCT_IMAGE_REGEX = {
     IMAGE_URL: /\.(jpe?g|png|webp|gif|bmp|svg|avif|tiff?)$/i,
 }
 
+ROLE_MODEL_REGEX = {
+    NAME: /^[A-Za-z\s]+$/,
+    DESCRIPTION: /^[A-Za-z\s]+$/,
+}
+
 module.exports = {
     USER_MODEL_REGEX,
     PRODUCT_MODEL_REGEX,
@@ -39,4 +44,5 @@ module.exports = {
     REVIEW_MODEL_REGEX,
     CATEGORY_MODEL_REGEX,
     PRODUCT_IMAGE_REGEX,
+    ROLE_MODEL_REGEX,
 };

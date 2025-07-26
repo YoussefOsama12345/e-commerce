@@ -111,6 +111,16 @@ PAYMENT_MODEL_ERRORS = {
     PAYMENT_DATE_MIN: 'Payment date must be greater than 0.',
 }
 
+ROLE_MODEL_ERRORS = {
+    NAME_LENGTH: 'Name must be between 2 and 50 characters.',
+    NAME_LETTERS_ONLY: 'Name can only contain letters and spaces.',
+    NAME_NOT_EMPTY: 'Name cannot be empty.',
+    NAME_NOT_NULL: 'Name cannot be null.',
+    DESCRIPTION_LENGTH: 'Description must be between 3 and 200 characters.',
+    DESCRIPTION_LETTERS_ONLY: 'Description can only contain letters and spaces.',
+    DESCRIPTION_NOT_EMPTY: 'Description cannot be empty.',
+    DESCRIPTION_NOT_NULL: 'Description cannot be null.',
+}
 
 module.exports = {
     USER_MODEL_ERRORS,
@@ -121,5 +131,6 @@ module.exports = {
     CATEGORY_MODEL_ERRORS,
     CART_ITEM_MODEL_ERRORS,
     PRODUCT_IMAGE_MODEL_ERRORS,
-    PAYMENT_MODEL_ERRORS
+    PAYMENT_MODEL_ERRORS,
+    ROLE_MODEL_ERRORS
 };
