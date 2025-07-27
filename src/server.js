@@ -18,21 +18,21 @@ const OrderItem = require('./models/orderItem.model');
 const Role = require('./models/roles.model');
 const Permission = require('./models/Permission.model');
 
-
 // Server port
 const PORT = DEVELOPMENT_ENV.port || 5000;
 
 // Setup associations BEFORE syncing
 setupAssociations();
 
-sequelize.sync({ force: false, alter: true })
-    .then(() => {
-        console.log('All models synced with DB');
-    })
-    .catch((err) => {
-        console.error('Error syncing models:', err);
-    });
+sequelize
+  .sync({ force: false, alter: true })
+  .then(() => {
+    console.log('All models synced with DB');
+  })
+  .catch((err) => {
+    console.error('Error syncing models:', err);
+  });
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });

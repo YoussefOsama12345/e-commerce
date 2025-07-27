@@ -1,17 +1,15 @@
 const nodemailer = require('nodemailer');
 const { DEVELOPMENT_ENV } = require('../config/env');
 
-
 const emailUser = DEVELOPMENT_ENV.emailUser;
 const emailPassword = DEVELOPMENT_ENV.emailPassword;
 
-
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: emailUser,
-        pass: emailPassword
-    }
+  service: 'gmail',
+  auth: {
+    user: emailUser,
+    pass: emailPassword,
+  },
 });
 
 /**
@@ -23,21 +21,21 @@ const transporter = nodemailer.createTransport({
  */
 
 const sendEmail = async (to, subject, text, html) => {
-    const mailOptions = {
-        from: emailUser,
-        to,
-        subject,
-        text,
-        html
-    };
+  const mailOptions = {
+    from: emailUser,
+    to,
+    subject,
+    text,
+    html,
+  };
 
-    try {
-        await transporter.sendMail(mailOptions);
-        console.log('Email sent successfully to', to);
-    } catch (error) {
-        console.error('Failed to send email:', error);
-        throw new Error('Email sending failed');
-    }
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully to', to);
+  } catch (error) {
+    console.error('Failed to send email:', error);
+    throw new Error('Email sending failed');
+  }
 };
 
 module.exports = { sendEmail };

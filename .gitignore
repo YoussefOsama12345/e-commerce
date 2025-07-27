@@ -81,5 +81,6 @@ out/
 
 # === Firebase/Cloud (if any) ===
 .firebase/
+firebase-service-key.json
 .firebaserc
 functions/node_modules/

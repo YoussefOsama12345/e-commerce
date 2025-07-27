@@ -9,52 +9,60 @@ const Payment = require('./payment.model');
 const Wishlist = require('./wishlists.model');
 const ProductImage = require('./productImage.model');
 const Category = require('./catogory.model');
+const Role = require('./roles.model');
+const Permission = require('./Permission.model');
 
 function setupAssociations() {
-    // User associations
-    User.hasMany(Order, { foreignKey: 'userId' });
-    Order.belongsTo(User, { foreignKey: 'userId' });
+  // User associations
+  User.hasMany(Order, { foreignKey: 'userId' });
+  Order.belongsTo(User, { foreignKey: 'userId' });
 
-    User.hasOne(Cart, { foreignKey: 'userId' });
-    Cart.belongsTo(User, { foreignKey: 'userId' });
+  User.hasOne(Cart, { foreignKey: 'userId' });
+  Cart.belongsTo(User, { foreignKey: 'userId' });
 
-    User.hasMany(Review, { foreignKey: 'userId' });
-    Review.belongsTo(User, { foreignKey: 'userId' });
+  User.hasMany(Review, { foreignKey: 'userId' });
+  Review.belongsTo(User, { foreignKey: 'userId' });
 
-    User.hasMany(Wishlist, { foreignKey: 'userId' });
-    Wishlist.belongsTo(User, { foreignKey: 'userId' });
+  User.hasMany(Wishlist, { foreignKey: 'userId' });
+  Wishlist.belongsTo(User, { foreignKey: 'userId' });
 
-    // Order associations
-    Order.hasMany(OrderItem, { foreignKey: 'orderId' });
-    OrderItem.belongsTo(Order, { foreignKey: 'orderId' });
+  User.belongsTo(Role, { foreignKey: 'roleId' });
+  Role.hasMany(User, { foreignKey: 'roleId' });
 
-    Order.hasOne(Payment, { foreignKey: 'orderId' });
-    Payment.belongsTo(Order, { foreignKey: 'orderId' });
+  // Order associations
+  Order.hasMany(OrderItem, { foreignKey: 'orderId' });
+  OrderItem.belongsTo(Order, { foreignKey: 'orderId' });
 
-    // Cart associations
-    Cart.hasMany(CartItem, { foreignKey: 'cartId' });
-    CartItem.belongsTo(Cart, { foreignKey: 'cartId' });
+  Order.hasOne(Payment, { foreignKey: 'orderId' });
+  Payment.belongsTo(Order, { foreignKey: 'orderId' });
 
-    // Product associations
-    Product.hasMany(Review, { foreignKey: 'productId' });
-    Review.belongsTo(Product, { foreignKey: 'productId' });
+  // Cart associations
+  Cart.hasMany(CartItem, { foreignKey: 'cartId' });
+  CartItem.belongsTo(Cart, { foreignKey: 'cartId' });
 
-    Product.hasMany(OrderItem, { foreignKey: 'productId' });
-    OrderItem.belongsTo(Product, { foreignKey: 'productId' });
+  // Product associations
+  Product.hasMany(Review, { foreignKey: 'productId' });
+  Review.belongsTo(Product, { foreignKey: 'productId' });
 
-    Product.hasMany(CartItem, { foreignKey: 'productId' });
-    CartItem.belongsTo(Product, { foreignKey: 'productId' });
+  Product.hasMany(OrderItem, { foreignKey: 'productId' });
+  OrderItem.belongsTo(Product, { foreignKey: 'productId' });
 
-    Product.hasMany(Wishlist, { foreignKey: 'productId' });
-    Wishlist.belongsTo(Product, { foreignKey: 'productId' });
+  Product.hasMany(CartItem, { foreignKey: 'productId' });
+  CartItem.belongsTo(Product, { foreignKey: 'productId' });
 
-    Product.hasMany(ProductImage, { foreignKey: 'productId' });
-    ProductImage.belongsTo(Product, { foreignKey: 'productId' });
+  Product.hasMany(Wishlist, { foreignKey: 'productId' });
+  Wishlist.belongsTo(Product, { foreignKey: 'productId' });
 
-    // Category associations
-    Category.hasMany(Product, { foreignKey: 'categoryId' });
-    Product.belongsTo(Category, { foreignKey: 'categoryId' });
+  Product.hasMany(ProductImage, { foreignKey: 'productId' });
+  ProductImage.belongsTo(Product, { foreignKey: 'productId' });
+
+  // Category associations
+  Category.hasMany(Product, { foreignKey: 'categoryId' });
+  Product.belongsTo(Category, { foreignKey: 'categoryId' });
+
+  // Role-Permission association (many-to-many)
+  Role.hasMany(Permission, { foreignKey: 'roleId' });
+  Permission.belongsTo(Role, { foreignKey: 'roleId' });
 }
 
-module.exports = setupAssociations; 
-
+module.exports = setupAssociations;
