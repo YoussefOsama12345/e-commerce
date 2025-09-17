@@ -4,6 +4,11 @@ const helmet = require('helmet');
 const dotenv = require('dotenv');
 const { swaggerDocs } = require('./config/swagger');
 const { morganMiddleware } = require('./utils/logger');
+const { metricMiddleware} = require('./middlewares/metrics.middleware');
+const promClient = require('prom-client');
+const errorMiddleware = require('./middlewares/error.middleware');
+const AppError = require('./utils/appError');
+
 
 // Routes
 // const authRoutes = require('./routes/auth.routes');
@@ -25,12 +30,25 @@ dotenv.config(); // Load .env config
 const app = express();
 // const router = express.Router();
 
+promClient.collectDefaultMetrics();
+
+
 // Middlewares
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morganMiddleware);
+app.use(metricMiddleware);
+
+// middleware for not found routes
+
+app.all('*', (req,res,next) => {
+  res.status(404).json({
+    status: 'fail',
+    message: `Can't find ${req.originalUrl} on this server!`
+  });
+});
 
 // Routes
 // router.use('/api/v1',authRoutes);
@@ -48,19 +66,25 @@ app.use(morganMiddleware);
 // Swagger documentation
 swaggerDocs(app);
 
+app.get('/metrics', async (req, res) => {
+  try {
+    res.set('Content-Type', promClient.register.contentType);
+    res.end(await promClient.register.metrics());
+  } catch (err) {
+    res.status(500).end(err);
+  }
+});
+
 app.get('/api/v1', (req, res) => {
   res.status(200).json({ message: 'API is running successfully' });
 });
 
 // 404 handler
 app.use((req, res, next) => {
-  res.status(404).json({ error: 'Route not found' });
+   next(new AppError.create)
 });
 
 // Global error handler
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
-});
+app.use(errorMiddleware);
 
 module.exports = app;
